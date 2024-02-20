@@ -7,7 +7,7 @@ const Filter = () => {
   const dispatch = useDispatch();
 
   const handleFilterChange = e => {
-    dispatch(setFilterValue(e.target.value.trim().toLowerCase())); // Dodanie trim() i toLowerCase() dla lepszego filtrowania
+    dispatch(setFilterValue(e.target.value.trim().toLowerCase()));
   };
 
   return (

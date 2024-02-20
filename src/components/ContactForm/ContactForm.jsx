@@ -24,6 +24,7 @@ const ContactForm = () => {
         name="name"
         value={name}
         onChange={e => setName(e.target.value)}
+        placeholder="Enter name here"
         required
       />
       <label htmlFor="phone">Phone:</label>
@@ -33,6 +34,7 @@ const ContactForm = () => {
         name="phone"
         value={phone}
         onChange={e => setPhone(e.target.value)}
+        placeholder="Enter phone number here"
         required
       />
       <button className={styles.button} type="submit">

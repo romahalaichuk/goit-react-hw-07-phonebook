@@ -48,7 +48,7 @@ const phonebookSlice = createSlice({
     contacts: [],
     status: 'idle',
     error: null,
-    filter: '', // Dodane pole dla przechowywania wartości filtra
+    filter: '',
   },
   reducers: {
     setFilterValue: (state, action) => {
