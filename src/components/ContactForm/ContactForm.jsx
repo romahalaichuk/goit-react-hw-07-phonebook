@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/phonebookSlice';
+import { addNewContact } from '../../redux/phonebookSlice';
 import styles from './ContactForm.module.css';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+  const [phone, setPhone] = useState('');
   const dispatch = useDispatch();
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    const id = Date.now().toString();
-    dispatch(addContact({ id, name, number }));
+    await dispatch(addNewContact({ name, phone }));
     setName('');
-    setNumber('');
+    setPhone('');
   };
 
   return (
@@ -27,13 +26,13 @@ const ContactForm = () => {
         onChange={e => setName(e.target.value)}
         required
       />
-      <label htmlFor="number">Number:</label>
+      <label htmlFor="phone">Phone:</label>
       <input
         type="text"
-        id="number"
-        name="number"
-        value={number}
-        onChange={e => setNumber(e.target.value)}
+        id="phone"
+        name="phone"
+        value={phone}
+        onChange={e => setPhone(e.target.value)}
         required
       />
       <button className={styles.button} type="submit">

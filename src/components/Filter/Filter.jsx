@@ -1,13 +1,13 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { setFilter } from '../../redux/phonebookSlice';
+import { setFilterValue } from '../../redux/phonebookSlice';
 import styles from './Filter.module.css';
 
 const Filter = () => {
   const dispatch = useDispatch();
 
   const handleFilterChange = e => {
-    dispatch(setFilter(e.target.value));
+    dispatch(setFilterValue(e.target.value.trim().toLowerCase())); // Dodanie trim() i toLowerCase() dla lepszego filtrowania
   };
 
   return (
